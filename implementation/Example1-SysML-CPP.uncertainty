@@ -1,0 +1,10 @@
+-- ESTIMATED SysML
+TK?M(Component1@SysML):"Maybe a final state may be missing"
+TK?O(S11@Component1@SysML):"State S11 might not happen in Component1"
+TK~O(S12@Component1@SysML):"I am not sure State S12 is valid in Component1"
+
+-- ESTIMATED CPP
+GT!O(S11@Component1@CPP):"Class S11 *must* be present"
+GT??O(S14@Component1@CPP):"Class S14 probably not needed"
+GT~O(e22@Component2@CPP):"I am not very sure about event e22"
+GT?O(S23@Component2@CPP):"Class S23 not needed in COmponent2?"

@@ -1,0 +1,40 @@
+Architecture:
+    diagrams+=Diagram
+;
+
+Diagram:
+    name=ID ':' type=ElementType '{'
+        'contents: {'
+            contents+=Element[',']
+        '}'
+        (',' pvs = PropertyValues)?
+    '}'
+;
+
+ElementType:
+    'Diagram' | 'Entity' | 'Connection' | 'Component' | 'State' | 'Event' | 'Repository' | 'Class' | 'Case' |'Block'
+;
+
+Element:
+    name=ID ':' type=ElementType ('{' (cps=ConnectionProperties ',')? pvs=PropertyValues '}')? ('{' 'contents:' '{' contents+=Element[','] '}' '}')?
+;
+
+PropertyValues:
+    'propertyValues: {'
+        kvs+=KeyValuePair[',']
+    '}'
+;
+
+ConnectionProperties:
+    'connectionProperties: {'
+        kvs+=KeyValuePair[',']
+    '}'
+;
+
+KeyValuePair:
+    key=ID '=' value=ID
+;
+
+Comment:
+  /--.*$/
+;

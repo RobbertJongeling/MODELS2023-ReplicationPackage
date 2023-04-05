@@ -1,0 +1,143 @@
+model Uncertainty
+
+enum DoU {Bang, None, Tilde, QM, dQM} -- degree of uncertainty
+
+class UncertaintyCalculator
+attributes 
+  noneDegree: Real init: 1.0
+  tildeDegree: Real init: 0.90
+  qmDegree: Real init: 0.8
+  dQMDegree: Real init: 0.5
+  OKopinion :SBoolean derive=self.dou2opinion(#None)
+  tildeOpinion :SBoolean derive=self.dou2opinion(#Tilde)
+  qmOpinion :SBoolean derive=self.dou2opinion(#QM)
+  dqmOpinion :SBoolean derive=self.dou2opinion(#dQM)
+
+
+operations
+toString(d:DoU):String = 
+  if d=#None then '_' 
+  else if d=#Tilde then '~'
+    else if d=#QM then '?'
+      else '$'
+      endif
+    endif
+  endif
+
+opinion2DoU(o:SBoolean):DoU = 
+    let b:Real = o.belief() in 
+     if b>=self.noneDegree then #None 
+         else if b>=self.tildeDegree then #Tilde
+              else if b>=self.qmDegree then #QM 
+                   else #dQM 
+                   endif
+              endif
+         endif
+
+dou2opinion(d:DoU):SBoolean =
+    if d=#None then SBoolean(self.noneDegree,0,1-self.noneDegree,0.5)
+    else if d=#Tilde then SBoolean(self.tildeDegree,0,1-self.tildeDegree,0.5)
+         else if d=#QM then SBoolean(self.qmDegree,(1-self.qmDegree)/10,9*(1-self.qmDegree)/10,0.5)
+              else SBoolean(self.dQMDegree,(1-self.dQMDegree)/4,3*(1-self.dQMDegree)/4,0.5)
+              endif
+         endif
+    endif
+
+andTable()
+  begin 
+    declare R:Sequence(DoU);
+    R := Sequence{#None, #Tilde, #QM, #dQM};
+    for i in R do 
+        for j in R do
+            Write(self.toString(self.opinion2DoU(self.dou2opinion(i) and self.dou2opinion(j))).concat(' '));
+        end;
+        WriteLine(' ');
+    end;
+  end 
+xorTable()
+  begin 
+    declare R:Sequence(DoU);
+    R := Sequence{#None, #Tilde, #QM, #dQM};
+    for i in R do 
+        for j in R do
+            Write(self.toString(self.opinion2DoU(self.dou2opinion(i) xor self.dou2opinion(j))).concat(' '));
+        end;
+        WriteLine(' ');
+    end;
+  end 
+
+
+  impliesTable()
+  begin 
+    declare R:Sequence(DoU);
+    R := Sequence{#None, #Tilde, #QM, #dQM};
+    for i in R do 
+        for j in R do
+            Write(self.toString(self.opinion2DoU(self.dou2opinion(i) implies self.dou2opinion(j))).concat(' '));
+        end;
+        WriteLine(' ');
+    end;
+  end 
+
+   equivTable()
+  begin 
+    declare R:Sequence(DoU);
+    R := Sequence{#None, #Tilde, #QM, #dQM};
+    for i in R do 
+        for j in R do
+            Write(self.toString(self.opinion2DoU(self.dou2opinion(i) = self.dou2opinion(j))).concat(' '));
+        end;
+        WriteLine(' ');
+    end;
+  end 
+
+
+orTable()
+  begin 
+    declare R:Sequence(DoU);
+    R := Sequence{#None, #Tilde, #QM, #dQM};
+    for i in R do 
+        for j in R do
+            Write(self.toString(self.opinion2DoU(self.dou2opinion(i) or self.dou2opinion(j))).concat(' '));
+        end;
+        WriteLine(' ');
+    end;
+  end 
+
+
+wbfTable()
+  begin 
+    declare R:Sequence(DoU);
+    R := Sequence{#None, #Tilde, #QM, #dQM};
+    for i in R do 
+        for j in R do
+            if i=#None then Write(self.toString(j).concat(' '));
+            else if j=#None then Write(self.toString(i).concat(' '));
+                 else  Write(self.toString(self.opinion2DoU(self.dou2opinion(i).weightedBeliefFusion(Sequence{self.dou2opinion(j)}))).concat(' '));
+                 end;
+            end;
+        end;
+        WriteLine(' ');
+    end;
+  end 
+
+abfTable()
+  begin 
+    declare R:Sequence(DoU);
+    R := Sequence{#None, #Tilde, #QM, #dQM};
+    for i in R do 
+        for j in R do
+            if i=#None then Write(self.toString(j).concat(' '));
+            else if j=#None then Write(self.toString(i).concat(' '));
+                 else  Write(self.toString(self.opinion2DoU(self.dou2opinion(i).averageBeliefFusion(Sequence{self.dou2opinion(j)}))).concat(' '));
+                 end;
+            end;
+        end;
+        WriteLine(' ');
+    end;
+  end 
+
+
+
+end
+

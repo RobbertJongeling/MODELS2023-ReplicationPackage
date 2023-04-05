@@ -1,0 +1,28 @@
+-- ESTIMATED RefM
+TK?O(C1@RefM):"Is C1 part of Family F?"
+GT~P(color#C1@RefM):"yellow?"
+GT?O(C2@RefM):"I am unsure C2 belongs to this family"
+GT?A(C2@RefM):"It is not clear that C2 is available for Family F"
+TK!O(C2@RefM):"Component C2 is always required!"
+
+-- ESTIMATED RefRD
+TK?O(C1@RefRD):"I am not sure C1 is part of this diagram"
+TK??P(protocol#C1_C8@RefRD):"better https?"
+GT?O(C6@RefRD):"C6 should not be here"
+GT??A(C6@RefRD):"Probably unavailable"
+TK~A(C6@RefRD):"Doubts about C6 availability"
+
+-- ESTIMATED PM
+GT~M(PM):"We may miss some component in PM"
+TK?M(PM):"This product model may miss something"
+TK??O(C1@PM):"Is C1 part of Product P?"
+GT?A(C1@PM):"Probably not available?"
+GT~O(C2@PM):"I am unsure C2 belongs to P"
+TK!O(C3@PM):"The customer confirms C3 must be in P"
+
+-- ESTIMATED PMRD
+GT!O(C1@PMRD):"Component C1 must be here"
+TK??P(protocol#C1_C9@PMRD):"Is it IMAP?"
+GT~O(C1_C9@PMRD):"Link might not exist"
+GT?A(C1_C9@PMRD):"Might be unavailable"
+GT??O(C9@PMRD):"C9 might not be in this product"

@@ -1,0 +1,50 @@
+-- >>> SYSTEM ARCHITECTURE DESCRIPTION (TEXTUAL) >>>>>>>>>>>>>>>>>>
+
+RefM:Diagram {
+    contents: { C1:Component {propertyValues: {position=up, color=blue}},
+                C2:Component {propertyValues: {position=left, color=yellow}},
+                C3:Component {propertyValues: {position=right, color=yellow}},
+                C4:Component {propertyValues: {position=right, color=blue}},
+                C5:Component {propertyValues: {position=right, color=red}},
+                C6:Component {propertyValues: {position=right, color=yellow}},
+                C7:Component {propertyValues: {position=right, color=yellow}},
+                CX:Component {propertyValues: {position=right, color=yellow}},
+                CY:Component {propertyValues: {position=right, color=yellow}}
+              },
+    propertyValues: {layout=great, color=yellow}
+}
+
+RefRD:Diagram {
+    contents: { C1:Component {propertyValues: {position=left, color=grey}},
+                C2:Component {propertyValues: {position=right, color=grey}},
+                C6:Component {propertyValues: {position=up, color=grey}},
+                C8:Component {propertyValues: {position=up, color=grey}},
+                C1_C6:Connection {connectionProperties: {source=C1, target=C6}, propertyValues: {protocol=http}},
+                C2_C6:Connection {connectionProperties: {source=C2, target=C6}, propertyValues: {protocol=http}},
+                C1_C8:Connection {connectionProperties: {source=C1, target=C8}, propertyValues: {protocol=http}}
+              },
+    propertyValues: {layout=great, color=red}
+}
+
+PM:Diagram {
+    contents: { C0:Component {propertyValues: {position=right, color=yellow}},
+                C1:Component {propertyValues: {position=up, color=blue}},
+                C2:Component {propertyValues: {position=up, color=yellow}},
+                C3:Component {propertyValues: {position=left, color=yellow}},
+                C5:Component {propertyValues: {position=down, color=yellow}},
+                C6:Component {propertyValues: {position=right, color=yellow}}
+              },
+    propertyValues: {layout=great, color=blue}
+}
+
+PMRD:Diagram {
+    contents: { C1:Component {propertyValues: {position=up, color=grey}},
+                C2:Component {propertyValues: {position=left, color=grey}},
+                C6:Component {propertyValues: {position=right, color=grey}},
+                C9:Component {propertyValues: {position=up, color=grey}},
+                C1_C6:Connection {connectionProperties: {source=C1, target=C6}, propertyValues: {protocol=http}},
+                C2_C6:Connection {connectionProperties: {source=C2, target=C6}, propertyValues: {protocol=http}},
+                C1_C9:Connection {connectionProperties: {source=C1, target=C9}, propertyValues: {protocol=http}}
+              },
+    propertyValues: {layout=great, color=red}
+}

@@ -1,0 +1,27 @@
+UncertaintyFile:
+    uncertaintyExpressions*=UncertaintyExpression
+;
+
+UncertaintyExpression:
+    actor=ID uOperator=UncertaintyOperator uType=UncertaintyType uElement=UncertainElement (':' rationale=STRING)?
+;
+
+Actor:
+    name=ID
+;
+
+UncertaintyOperator:
+    '!' | '~' | '??' | '?' /* Note: the order here is important, otherwise we can't match "??" */
+;
+
+UncertaintyType:
+    'O' | 'P' | 'A' | 'M' | 'C'
+;
+
+UncertainElement:
+    '(' (uElementProperty=ID '#')? (uElementIDs=ID '@')* uElementLocation=ID ')'
+;
+
+Comment:
+  /--.*$/
+;

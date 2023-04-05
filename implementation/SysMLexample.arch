@@ -1,0 +1,59 @@
+SysML:Diagram {
+    contents: {
+        Component1:Component {
+            contents: {
+                S11:State,
+                S12:State,
+                S13:State,
+                e13:Event,
+                e11:Event
+            }
+        },
+        Component2:Component {
+            contents: {
+                S21:State,
+                S22:State,
+                S23:State,
+                e21:Event,
+                e22:Event
+            }
+        }
+    }
+}
+
+CPP:Diagram { 
+    contents: {
+        Component1:Repository {
+            contents: {
+                S11:Class {
+                    contents: {
+                        e11:Case
+                    }
+                },
+                S12:Class {
+                    contents: {
+                        e13:Case
+                    }
+                },
+                S14:Class
+            }
+        },
+        Component2:Repository {
+            contents: {
+                S21:Class {
+                    contents: {
+                        e21:Case
+                    }
+                },
+                S22:Class {
+                    contents: {
+                        e22:Case
+                    }
+                },
+                S23:Class
+            }
+        }
+    }
+}
+
+
