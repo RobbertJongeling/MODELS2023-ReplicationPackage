@@ -1,2 +1,2 @@
 # MODELS2023-ReplicationPackage
-Replication package for paper #5 MODELS 2023.
+Replication package for submission #5 MODELS 2023.
