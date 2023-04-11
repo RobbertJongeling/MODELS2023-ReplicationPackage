@@ -6,7 +6,7 @@ Managing inconsistency across models and development artifacts is always a diffi
 
 ## Repository contents:
 This repository has the following files:
-- Uncertainty.use -- This file shows how we use the implementation of subjective logic operators in the modeling tool "USE" to obtain the contents of Table 1 in the paper. The results are then used in LookupTables.py.
+- Uncertainty.use -- This file shows how we use the implementation of subjective logic operators in the modeling tool "USE" to obtain the contents of Table 1 in the paper. The results are then used in LookupTables.py. This USE model makes use of subjective logic operators. Therefore it should be executed with the extended version of USE that supports these operators, which is publically available for download. [Download USE here](https://atenea.lcc.uma.es/downloads/SubjectiveLogic/USE-Uncertainty.zip).
 - Implementation -- Folder containing the implementation, including input and output files.
     - Grammars
         - architecture.tx -- TextX grammar used to capture the contents of the examples in a uniform way in textual models
