@@ -15,7 +15,7 @@ UncertaintyOperator:
 ;
 
 UncertaintyType:
-    'O' | 'P' | 'A' | 'M' | 'C'
+    'O' | 'P' | 'A' | 'M'
 ;
 
 UncertainElement:
