@@ -1,8 +1,6 @@
 # MODELS2023-ReplicationPackage
 Replication package for our paper "Uncertainty-aware consistency checking in industrial settings" by Robbert Jongeling and Antonio Vallecillo, presented at MODELS conference 2023.
 
-[![DOI](https://zenodo.org/badge/623843602.svg)](https://zenodo.org/badge/latestdoi/623843602)
-
 ## Paper abstract:
 Managing inconsistency across models and development artifacts is always a difficult task. The situation is even more complex in large industrial settings, due to some of their practicalities, such as the common use of rather informal models in their designs, the existence of very large sets of loosely connected artifacts, and the difficulty of precisely defining consistency rules among them. Additionally, the development of these large software-intensive systems is riddled with uncertainty, which cannot be avoided. Recent research has focused on means to make certain types of uncertainty explicit and allow reasoning about them. In this work, we explore how we can assist engineers in managing in a lightweight way both consistency and design uncertainty during the creation and maintenance of models and other development artifacts. We identify the types of design uncertainty and inconsistency to be addressed in two concrete industrial settings and show a prototype implementation of our approach to calculating the uncertainty and inconsistency in these cases. We show how making design uncertainty explicit can help tolerate inconsistencies with high uncertainty, prioritize inconsistencies with low associated uncertainty, and uncover previously hidden potential inconsistencies.
 
