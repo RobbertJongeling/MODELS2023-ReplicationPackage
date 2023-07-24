@@ -21,7 +21,7 @@ This repository has the following files:
         - ConsistencyCheckingInfo.py -- Contains the consistency rules and propagation rules for degrees of doubt.
         - Helpers.py -- Contains some to_string functions
         - LookupTables.py -- Instead of directly calling subjective logic operations, we use these lookup tables to simplify the implementation.
-        - UncertaintyCalculations.py -- In its current form, contains the implementation needed to run the approach for demo 1 and demo 2.
+        - UncertaintyCalculations.py -- In its current form, contains the implementation needed to run the approach for demo 1 and demo 2. Set the variable on line 389 "demo = 1" or "demo = 2" to run demo 1 or demo 2 respectively. The "debug_mode" on line 388 prints fewer uncertainties when set to true, so as to be able to assess manually easier the correctness of the output. Set to False to print all the intermediate results too.
     - Results (Output)
         - output-example-1.txt -- Result of running ConsistencyCheckingInfo with SysMLexample.arch and Example1-SysML-CPP.uncertainty as input, and when running with the consistency and propagation rules from setting 1.
         - output-example-2.txt -- Result of running ConsistencyCheckingInfo with PLexample.arch and Example2-ProductLine.uncertainty as input, and when running with the consistency and propagation rules from setting 2.
