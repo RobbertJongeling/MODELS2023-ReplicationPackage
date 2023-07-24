@@ -13,10 +13,10 @@ This repository has the following files:
         - uncertainty.tx -- TextX grammar used to capture the expressions of doubt.
     - Textual models (Input)
         - SysMLexample.arch -- Textual model of the setting of example 1, in Figure 1, following architecture.tx.
-        - PLexample.arch -- Textual model of the setting of exmaple 2, in Figure 2, following architecture.tx.
+        - PLexample.arch -- Textual model of the setting of example 2, in Figure 2, following architecture.tx.
     - Expressions of degrees of doubt (Input)
         - Example1-SysML-CPP.uncertainty -- File containing doubts expressed in example 1, following the grammar defined in uncertainty.tx.
-        - Example2-ProductLine.uncertainty -- File containig doubts expressed in example 2, following the grammar defined in uncertainty.tx.
+        - Example2-ProductLine.uncertainty -- File containing doubts expressed in example 2, following the grammar defined in uncertainty.tx.
     - Code
         - ConsistencyCheckingInfo.py -- Contains the consistency rules and propagation rules for degrees of doubt.
         - Helpers.py -- Contains some to_string functions
