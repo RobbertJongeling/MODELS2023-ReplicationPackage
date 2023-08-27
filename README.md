@@ -1,5 +1,9 @@
-# MODELS2023-ReplicationPackage
-Replication package for our paper "Uncertainty-aware consistency checking in industrial settings" by Robbert Jongeling and Antonio Vallecillo, presented at MODELS conference 2023.
+# Uncertainty-aware consistency checking in industrial settings
+This repository contains all programs and artifacts used to implement the proposal described in the paper  "Uncertainty-aware consistency checking in industrial settings" by Robbert Jongeling and Antonio Vallecillo, presented at MODELS conference 2023, and to replicate the case studies described in the paper. A [preprint of the paper can be found here](http://www.es.mdu.se/pdf_publications/6722.pdf).
+
+Please cite the paper as follows:
+
+Robbert Jongeling, Antonio Vallecillo. "Uncertainty-aware consistency checking in industrial settings." In Proc. of the 2023 ACM/IEEE 26th International Conference on Model Driven Engineering Languages and Systems (MODELS'23), Västerås, Sweden, 2023. IEEE Computer Society.
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8177834.svg)](https://doi.org/10.5281/zenodo.8177834)
 
